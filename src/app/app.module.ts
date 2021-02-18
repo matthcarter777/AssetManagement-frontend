@@ -18,13 +18,20 @@ import { MatListModule } from '@angular/material/list';
 
 /* Footer */
 import { FooterComponent } from './components/template/footer/footer.component';
+import { HomeComponent } from './view/home/home.component';
+import { TypeComponent } from './view/type/type.component';
+
+/* Home */
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    TypeComponent
   ],
   imports: [
     BrowserModule,

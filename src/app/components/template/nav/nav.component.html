@@ -7,13 +7,13 @@
     fixedTopGap="64"
   >
     <mat-nav-list class="nav-list">
-      <a mat-list-item class="card">
+      <a mat-list-item class="card" routerLink="/">
         <i class="material-icons">
           home
         </i>
         Início
       </a>
-      <a mat-list-item class="card">
+      <a mat-list-item class="card" routerLink="/categories">
         <i class="material-icons">
           short_text
         </i>
@@ -27,4 +27,7 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
+  <mat-sidenav-content class="content">
+   <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
