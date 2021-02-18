@@ -16,11 +16,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 
+/* Footer */
+import { FooterComponent } from './components/template/footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

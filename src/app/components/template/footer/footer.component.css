@@ -1,0 +1,13 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(126, 126, 126);
+}
+
+.info {
+  font-size: 1rem;
+  font-weight: 300;
+}
