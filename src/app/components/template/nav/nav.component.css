@@ -14,3 +14,28 @@
   padding: 16px;
   background-color: #fff;
 }
+
+.divider {
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.line {
+  width: 150px;
+  height: 2px;
+
+  background-color: #c3c3c3;
+}
+
+.title {
+  font-size: 0.5rem bold;
+  margin-left: 20px;
+  margin-top: 10px;
+
+  color: #c4c4c4;
+}
+
+.home {
+  margin-bottom: -25px;
+}

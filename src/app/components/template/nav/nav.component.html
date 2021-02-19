@@ -6,20 +6,27 @@
     fixedInViewport="true"
     fixedTopGap="64"
   >
+    <div class="divider">
+      <div class="line"></div>
+    </div>
     <mat-nav-list class="nav-list">
-      <a mat-list-item class="card" routerLink="/">
+      <a mat-list-item class="card home" routerLink="/">
         <i class="material-icons">
           home
         </i>
         Início
       </a>
+      <div class="divider">
+        <div class="line"></div>
+      </div>
+      <h2 class="title">Cadastros</h2>
       <a mat-list-item class="card" routerLink="/categories">
         <i class="material-icons">
           short_text
         </i>
         Categoria
       </a>
-      <a mat-list-item class="card">
+      <a mat-list-item class="card" routerLink="/equipments">
         <i class="material-icons">
           short_text
         </i>
