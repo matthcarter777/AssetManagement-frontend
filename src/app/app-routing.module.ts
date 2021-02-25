@@ -1,3 +1,4 @@
+import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
 import { EquipmentCreateComponent } from './components/equipment/equipment-create/equipment-create.component';
 import { EquipmentComponent } from './view/equipment/equipment.component';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: "categories/create",
     component: TypeCreateComponent
+  },
+  {
+    path: "categories/delete/:id",
+    component: TypeDeleteComponent
   },
   {
     path: "equipments",

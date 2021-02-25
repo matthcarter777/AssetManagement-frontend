@@ -36,6 +36,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { EquipmentComponent } from './view/equipment/equipment.component';
 import { EquipmentCreateComponent } from './components/equipment/equipment-create/equipment-create.component';
 
+/* HTTP */
+import { HttpClientModule } from '@angular/common/http';
+import { TypeIndexComponent } from './components/type/type-index/type-index.component';
+
+/* Table */
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +57,9 @@ import { EquipmentCreateComponent } from './components/equipment/equipment-creat
     TypeComponent,
     TypeCreateComponent,
     EquipmentComponent,
-    EquipmentCreateComponent
+    EquipmentCreateComponent,
+    TypeIndexComponent,
+    TypeDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +74,11 @@ import { EquipmentCreateComponent } from './components/equipment/equipment-creat
     MatButtonModule,
     FormsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
