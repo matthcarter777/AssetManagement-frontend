@@ -24,30 +24,38 @@ export class TypeService {
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: isError ? ['msg-error'] : ['msg-sucess']
-    })
-  }
+    });
+  };
 
   index(): Observable<Type[]> {
     return this.http.get<Type[]>(this.basUrl).pipe(
       map(obj => obj),
       catchError(e => this.handleError(e))
     );
-  }
+  };
 
   create(type: Type): Observable<Type> {
     return this.http.post<Type>(this.basUrl, type).pipe(
       map(obj => obj),
       catchError(e => this.handleError(e))
     );
-  }
+  };
 
   show(id: string): Observable<Type> {
     const url = `${this.basUrl}/${id}`;
     return this.http.get<Type>(url).pipe(
       map(obj => obj),
       catchError(e => this.handleError(e))
-    )
-  }
+    );
+  };
+
+  update(type: Type): Observable<Type> {
+    const url = `${this.basUrl}/${type.id}`;
+    return this.http.put<Type>(url, type).pipe(
+      map(obj => obj),
+      catchError(e => this.handleError(e))
+    );
+  };
 
   delete(id: string): Observable<Type> {
     const url = `${this.basUrl}/${id}`;
@@ -55,11 +63,11 @@ export class TypeService {
       map(obj => obj),
       catchError(e => this.handleError(e))
     );
-  }
+  };
 
   handleError(e: any): Observable<any> {
     this.showMessage('Ocorreu um Erro!', true);
     return EMPTY;
-  }
+  };
 
 }

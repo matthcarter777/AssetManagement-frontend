@@ -46,6 +46,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
+import { TypeUpdateComponent } from './components/type/type-update/type-update.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { TypeDeleteComponent } from './components/type/type-delete/type-delete.c
     EquipmentComponent,
     EquipmentCreateComponent,
     TypeIndexComponent,
-    TypeDeleteComponent
+    TypeDeleteComponent,
+    TypeUpdateComponent
   ],
   imports: [
     BrowserModule,
