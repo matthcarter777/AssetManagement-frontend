@@ -1,3 +1,5 @@
+import { EquipmentService } from './../equipment.service';
+import { Equipment } from './../equipment.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./equipment-index.component.css']
 })
 export class EquipmentIndexComponent implements OnInit {
+  equipments!: Equipment[];
+  displayedColumns= ['description','identification','type_id','isAvailable', 'action']
 
-  constructor() { }
+  constructor(
+    private equipmentService: EquipmentService
+  ) { }
 
   ngOnInit(): void {
+    this.equipmentService.index().subscribe(equipments => {
+      this.equipments = equipments;
+    });
   }
 
 }
