@@ -10,7 +10,7 @@ import { Type } from '../type.model';
   styleUrls: ['./type-delete.component.css']
 })
 export class TypeDeleteComponent implements OnInit {
-  type: Type;
+  type: Type | undefined;
 
 
 

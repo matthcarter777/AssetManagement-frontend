@@ -1,0 +1,40 @@
+import { Observable, EMPTY } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Injectable } from '@angular/core';
+import { catchError, map } from 'rxjs/operators';
+
+import  { Equipment }  from './equipment.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EquipmentService {
+  basUrl = 'http://localhost:3333/equipments';
+
+  constructor(
+    private snackBar: MatSnackBar,
+    private http: HttpClient
+  ) { }
+
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: isError ? ['msg-error'] : ['msg-sucess']
+    });
+  };
+
+  index(): Observable<Equipment[]> {
+    return this.http.get<Equipment[]>(this.basUrl).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  };
+
+  handelError(e: any): Observable<any> {
+    this.showMessage('Ocorreu um erro', true);
+    return EMPTY;
+  };
+}
