@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipmentIndexComponent implements OnInit {
   equipments!: Equipment[];
-  displayedColumns= ['description','identification','type_id','isAvailable', 'action']
+  displayedColumns= ['description','identification','type','isAvailable', 'action']
 
   constructor(
     private equipmentService: EquipmentService
