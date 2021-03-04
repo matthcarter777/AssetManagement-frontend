@@ -48,6 +48,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
 import { TypeUpdateComponent } from './components/type/type-update/type-update.component';
 import { EquipmentIndexComponent } from './components/equipment/equipment-index/equipment-index.component';
+import { EquipmentDeleteComponent } from './components/equipment/equipment-delete/equipment-delete.component';
+import { EquipmentUpdateComponent } from './components/equipment/equipment-update/equipment-update.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { EquipmentIndexComponent } from './components/equipment/equipment-index/
     TypeIndexComponent,
     TypeDeleteComponent,
     TypeUpdateComponent,
-    EquipmentIndexComponent
+    EquipmentIndexComponent,
+    EquipmentDeleteComponent,
+    EquipmentUpdateComponent
   ],
   imports: [
     BrowserModule,

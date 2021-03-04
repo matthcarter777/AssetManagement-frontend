@@ -20,7 +20,7 @@
 
     <!-- isAvailable Column -->
     <ng-container matColumnDef="isAvailable">
-      <th mat-header-cell *matHeaderCellDef >Categoria</th>
+      <th mat-header-cell *matHeaderCellDef >Disponibilidade</th>
       <td mat-cell *matCellDef="let row">{{row.isAvailable}}</td>
     </ng-container>
 
@@ -28,12 +28,12 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef >Ações</th>
       <td mat-cell *matCellDef="let row">
-        <a routerLink="/products/update/{{ row.id }}" class="edit">
+        <a routerLink="/equipments/update/{{ row.id }}" class="edit">
           <i class="material-icons">
             edit
           </i>
         </a>
-        <a routerLink="/products/delete/{{ row.id }}" class="cancel">
+        <a routerLink="/equipments/delete/{{ row.id }}" class="cancel">
           <i class="material-icons">
             delete
           </i>

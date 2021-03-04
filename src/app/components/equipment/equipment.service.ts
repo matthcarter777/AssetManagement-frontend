@@ -33,6 +33,22 @@ export class EquipmentService {
     );
   };
 
+  show(id: string): Observable<Equipment> {
+    const url = `${this.basUrl}/${id}`;
+    return this.http.get<Equipment>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  };
+
+  delete(id: string): Observable<Equipment> {
+    const url = `${this.basUrl}/${id}`;
+    return this.http.delete<Equipment>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  };
+
   handelError(e: any): Observable<any> {
     this.showMessage('Ocorreu um erro', true);
     return EMPTY;

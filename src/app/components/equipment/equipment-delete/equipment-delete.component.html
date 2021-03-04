@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-title>Excluir Equipamento</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Descrição"
+        [value]="equipment.description" disabled="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Identificação"
+        [value]="equipment.identification" disabled="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Categoria"
+        [value]="equipment.type" disabled="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Disponibilidade"
+        [value]="equipment.available" disabled="">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button color="warn" (click)="delete()" >Deletar</button>
+  <button mat-raised-button color="accent" (click)="cancel()" >Cancelar</button>
+</mat-card>

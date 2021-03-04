@@ -1,13 +1,20 @@
-import { TypeUpdateComponent } from './components/type/type-update/type-update.component';
-import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
-import { EquipmentCreateComponent } from './components/equipment/equipment-create/equipment-create.component';
-import { EquipmentComponent } from './view/equipment/equipment.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './view/home/home.component';
+/* Equipment */
+import { EquipmentComponent } from './view/equipment/equipment.component';
+import { EquipmentUpdateComponent } from './components/equipment/equipment-update/equipment-update.component';
+import { EquipmentDeleteComponent } from './components/equipment/equipment-delete/equipment-delete.component';
+import { EquipmentCreateComponent } from './components/equipment/equipment-create/equipment-create.component';
+
+/* Type */
 import { TypeComponent } from './view/type/type.component';
+import { TypeUpdateComponent } from './components/type/type-update/type-update.component';
+import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
 import { TypeCreateComponent } from './components/type/type-create/type-create.component';
+
+/* Home */
+import { HomeComponent } from './view/home/home.component';
 
 const routes: Routes = [
   {
@@ -37,7 +44,15 @@ const routes: Routes = [
   {
     path: "equipments/create",
     component: EquipmentCreateComponent
-  }
+  },
+  {
+    path: "equipments/delete/:id",
+    component: EquipmentDeleteComponent
+  },
+  {
+    path: "equipments/update/:id",
+    component: EquipmentUpdateComponent
+  },
 ];
 
 @NgModule({

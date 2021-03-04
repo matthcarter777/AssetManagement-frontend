@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { TypeService } from './../type.service';
 import { Type } from '../type.model';
+import { constants } from 'buffer';
+import { type } from 'os';
 
 @Component({
   selector: 'app-type-index',
@@ -19,6 +21,7 @@ export class TypeIndexComponent implements OnInit {
   ngOnInit(): void {
     this.typeService.index().subscribe(types => {
       this.types = types
+      console.log(types);
     });
   }
 

@@ -18,6 +18,7 @@ export class EquipmentIndexComponent implements OnInit {
   ngOnInit(): void {
     this.equipmentService.index().subscribe(equipments => {
       this.equipments = equipments;
+      console.log(equipments);
     });
   }
 
