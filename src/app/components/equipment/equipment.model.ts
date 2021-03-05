@@ -4,6 +4,6 @@ export interface Equipment {
   identification: string;
   type?: string;
   type_id: string;
-  available: string;
-  isAvailable: boolean;
+  available?: string;
+  isAvailable?: boolean;
 }

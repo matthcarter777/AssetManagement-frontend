@@ -10,7 +10,7 @@ import { Type } from '../type.model';
   styleUrls: ['./type-update.component.css']
 })
 export class TypeUpdateComponent implements OnInit {
-  type: Type;
+  type: Type | undefined;
 
   constructor(
     private typeService: TypeService,
@@ -27,7 +27,7 @@ export class TypeUpdateComponent implements OnInit {
   }
 
   update(): void {
-    this.typeService.update(this.type).subscribe(() => {
+    this.typeService.update(this.type as Type).subscribe(() => {
       this.typeService.showMessage('Categoria alterada com sucesso!');
       this.router.navigate(['/categories']);
     });
