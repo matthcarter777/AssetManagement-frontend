@@ -20,7 +20,7 @@ export class EquipmentCreateComponent implements OnInit {
   equipment: Equipment ={
     description: '',
     identification: '',
-    type_id: '9988dab9-b5e2-4ca6-a1a0-f5783916d41c'
+    type_id: ''
   };
   
   constructor(
@@ -36,7 +36,9 @@ export class EquipmentCreateComponent implements OnInit {
   }
 
   create(): void {
-    console.log(this.equipment);
+    var select = document.getElementById('type')?.nodeValue;
+    console.log(select);
+
     this.equipmentService.create(this.equipment as Equipment).subscribe(() => {
       this.equipmentService.showMessage('Equipamento criado com sucesso!');
       this.router.navigate(['/equipments']);

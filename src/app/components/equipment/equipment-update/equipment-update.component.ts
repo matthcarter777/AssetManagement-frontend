@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { EquipmentService } from '../equipment.service';
 
 @Component({
   selector: 'app-equipment-update',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipmentUpdateComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private equipmentService: EquipmentService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  cancel(): void {
+    this.router.navigate(['/equipments']);
   }
 
 }

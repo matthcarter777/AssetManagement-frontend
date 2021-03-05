@@ -49,6 +49,14 @@ export class EquipmentService {
     );
   };
 
+  update(equipment: Equipment): Observable<Equipment> {
+    const url = `${this.basUrl}/${equipment.id}`;
+    return this.http.put<Equipment>(url, equipment).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  };
+
   delete(id: string): Observable<Equipment> {
     const url = `${this.basUrl}/${id}`;
     return this.http.delete<Equipment>(url).pipe(
