@@ -1,12 +1,11 @@
 import { Equipment } from './../equipment.model';
-import { TypeService } from './../../type/type.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { EquipmentService } from './../equipment.service';
 
-
 /* Type */
+import { TypeService } from './../../type/type.service';
 import  { Type } from '../../type/type.model';
 
 
@@ -36,9 +35,6 @@ export class EquipmentCreateComponent implements OnInit {
   }
 
   create(): void {
-    var select = document.getElementById('type')?.nodeValue;
-    console.log(select);
-
     this.equipmentService.create(this.equipment as Equipment).subscribe(() => {
       this.equipmentService.showMessage('Equipamento criado com sucesso!');
       this.router.navigate(['/equipments']);
