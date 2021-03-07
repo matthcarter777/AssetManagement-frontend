@@ -12,8 +12,8 @@ import { TypeService } from './../../type/type.service';
   styleUrls: ['./equipment-update.component.css']
 })
 export class EquipmentUpdateComponent implements OnInit {
-  equipment: Equipment | undefined;
-  types: Type[] | undefined;
+  equipment!: Equipment;
+  types: Type[] = [];
 
 
   constructor(
