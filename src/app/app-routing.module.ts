@@ -18,8 +18,9 @@ import { HomeComponent } from './view/home/home.component';
 
 /* User */
 import { UserComponent } from './view/user/user.component';
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
-
+import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,14 @@ const routes: Routes = [
   {
     path: "users/create",
     component: UserCreateComponent
+  },
+  {
+    path: "users/delete/:id",
+    component: UserDeleteComponent
+  },
+  {
+    path: "users/update/:id",
+    component: UserUpdateComponent
   },
 ];
 

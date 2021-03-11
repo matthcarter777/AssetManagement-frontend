@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-title>Novo Usuário</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Nome" disabled=""
+      [(ngModel)]="user.name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="CPF" mask="000.000.000-00" 
+      [(ngModel)]="user.cpf" name="cpf" disabled="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Matricula" disabled=""
+      [(ngModel)]="user.registration" name="registration">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="E-mail" type="email"
+      [(ngModel)]="user.email" name="email" disabled="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Senha" type="password"
+      [(ngModel)]="user.password" name="password" disabled="">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="delete()" color="primary">
+    Deletar
+  </button>
+  <button mat-raised-button (click)="cancel()" color="accent">
+    Cancelar
+  </button>
+</mat-card>
+

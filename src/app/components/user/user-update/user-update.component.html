@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>Novo Usuário</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Nome"
+      [(ngModel)]="user.name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="CPF" mask="000.000.000-00" 
+      [(ngModel)]="user.cpf" name="cpf">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Matricula" 
+      [(ngModel)]="user.registration" name="registration">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="E-mail" type="email"
+      [(ngModel)]="user.email" name="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Senha" type="password"
+      [(ngModel)]="user.password" name="password">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="update()" color="primary">
+    Salvar
+  </button>
+  <button mat-raised-button (click)="cancel()" color="accent">
+    Cancelar
+  </button>
+</mat-card>
+
+

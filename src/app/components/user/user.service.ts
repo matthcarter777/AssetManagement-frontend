@@ -40,6 +40,31 @@ export class UserService {
     )
   }
 
+
+  show(id: string): Observable<User> {
+    const url  = `${this.basUrl}/${id}`
+    return this.http.get<User>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.handleError(e))
+    )
+  }
+
+  update(user: User): Observable<User> {
+    const url  = `${this.basUrl}/${user.id}`
+    return this.http.put<User>(url, user).pipe(
+      map(obj => obj),
+      catchError(e => this.handleError(e))
+    )
+  }
+
+  delete(id: string): Observable<User> {
+    const url  = `${this.basUrl}/${id}`
+    return this.http.delete<User>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.handleError(e))
+    )
+  }
+
   handleError(e: any): Observable<any> {
     this.showMessage('Ocorreu um Erro!', true);
     return EMPTY;

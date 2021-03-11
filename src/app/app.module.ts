@@ -59,6 +59,8 @@ import { EquipmentUpdateComponent } from './components/equipment/equipment-updat
 import { UserComponent } from './view/user/user.component';
 import { UserIndexComponent } from './components/user/user-index/user-index.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
+import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,8 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
     UserComponent,
     UserIndexComponent,
     UserCreateComponent,
+    UserDeleteComponent,
+    UserUpdateComponent,
   ],
   imports: [
     BrowserModule,
