@@ -27,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { TypeCreateComponent } from './components/type/type-create/type-create.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 /* Form */
 import { FormsModule } from '@angular/forms';
@@ -54,6 +55,8 @@ import { EquipmentDeleteComponent } from './components/equipment/equipment-delet
 import { EquipmentUpdateComponent } from './components/equipment/equipment-update/equipment-update.component';
 import { UserComponent } from './view/user/user.component';
 import { UserIndexComponent } from './components/user/user-index/user-index.component';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -92,7 +95,8 @@ import { UserIndexComponent } from './components/user/user-index/user-index.comp
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -34,7 +34,6 @@ export class EquipmentService {
   };
 
   create(equipment: Equipment): Observable<Equipment> {
-    console.log(equipment);
     return this.http.post<Equipment>(this.basUrl, equipment).pipe(
       map(obj => obj),
       catchError(e => this.handelError(e))

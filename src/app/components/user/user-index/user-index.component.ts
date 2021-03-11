@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
+import { User } from './../user.model';
+import { UserService } from './../user.service';
+
 @Component({
   selector: 'app-user-index',
   templateUrl: './user-index.component.html',
   styleUrls: ['./user-index.component.css']
 })
 export class UserIndexComponent implements OnInit {
+  users!: User[];
+  displayedColumns= ['name','cpf','registration','email', 'action']
 
-  constructor() { }
+  constructor(
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
+    this.userService.index().subscribe(users => {
+      this.users = users
+    })
   }
 
 }

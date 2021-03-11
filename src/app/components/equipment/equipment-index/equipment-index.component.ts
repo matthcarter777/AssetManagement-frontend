@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
+
 import { EquipmentService } from './../equipment.service';
 import { Equipment } from './../equipment.model';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-equipment-index',
@@ -18,7 +19,6 @@ export class EquipmentIndexComponent implements OnInit {
   ngOnInit(): void {
     this.equipmentService.index().subscribe(equipments => {
       this.equipments = equipments;
-      console.log(equipments);
     });
   }
 
