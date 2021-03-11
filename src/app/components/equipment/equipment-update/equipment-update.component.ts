@@ -13,7 +13,7 @@ import { TypeService } from './../../type/type.service';
 })
 export class EquipmentUpdateComponent implements OnInit {
   equipment!: Equipment;
-  types: Type[] = [];
+  types: Type[];
 
 
   constructor(

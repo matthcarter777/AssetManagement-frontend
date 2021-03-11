@@ -16,6 +16,11 @@ import { TypeCreateComponent } from './components/type/type-create/type-create.c
 /* Home */
 import { HomeComponent } from './view/home/home.component';
 
+/* User */
+import { UserComponent } from './view/user/user.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
+
+
 const routes: Routes = [
   {
     path: "",
@@ -52,6 +57,14 @@ const routes: Routes = [
   {
     path: "equipments/update/:id",
     component: EquipmentUpdateComponent
+  },
+  {
+    path: "users",
+    component: UserComponent
+  },
+  {
+    path: "users/create",
+    component: UserCreateComponent
   },
 ];
 

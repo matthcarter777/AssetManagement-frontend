@@ -45,11 +45,15 @@ import { TypeIndexComponent } from './components/type/type-index/type-index.comp
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+
 import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
 import { TypeUpdateComponent } from './components/type/type-update/type-update.component';
+
 import { EquipmentIndexComponent } from './components/equipment/equipment-index/equipment-index.component';
 import { EquipmentDeleteComponent } from './components/equipment/equipment-delete/equipment-delete.component';
 import { EquipmentUpdateComponent } from './components/equipment/equipment-update/equipment-update.component';
+import { UserComponent } from './view/user/user.component';
+import { UserIndexComponent } from './components/user/user-index/user-index.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +71,9 @@ import { EquipmentUpdateComponent } from './components/equipment/equipment-updat
     TypeUpdateComponent,
     EquipmentIndexComponent,
     EquipmentDeleteComponent,
-    EquipmentUpdateComponent
+    EquipmentUpdateComponent,
+    UserComponent,
+    UserIndexComponent,
   ],
   imports: [
     BrowserModule,
