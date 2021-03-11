@@ -50,13 +50,15 @@ import { MatSortModule } from '@angular/material/sort';
 import { TypeDeleteComponent } from './components/type/type-delete/type-delete.component';
 import { TypeUpdateComponent } from './components/type/type-update/type-update.component';
 
+/* Equipment */
 import { EquipmentIndexComponent } from './components/equipment/equipment-index/equipment-index.component';
 import { EquipmentDeleteComponent } from './components/equipment/equipment-delete/equipment-delete.component';
 import { EquipmentUpdateComponent } from './components/equipment/equipment-update/equipment-update.component';
+
+/* User */
 import { UserComponent } from './view/user/user.component';
 import { UserIndexComponent } from './components/user/user-index/user-index.component';
-
-export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     EquipmentUpdateComponent,
     UserComponent,
     UserIndexComponent,
+    UserCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +99,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

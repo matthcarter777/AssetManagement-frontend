@@ -33,6 +33,13 @@ export class UserService {
     );
   }
 
+  create(user: User): Observable<User> {
+    return this.http.post<User>(this.basUrl, user).pipe(
+      map(obj => obj),
+      catchError(e => this.handleError(e))
+    )
+  }
+
   handleError(e: any): Observable<any> {
     this.showMessage('Ocorreu um Erro!', true);
     return EMPTY;
