@@ -61,6 +61,11 @@ import { UserIndexComponent } from './components/user/user-index/user-index.comp
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
+import { LendingContractComponent } from './view/lending-contract/lending-contract.component';
+import { LendingContractIndexComponent } from './components/lending-contract/lending-contract-index/lending-contract-index.component';
+import { LendingContractCreateComponent } from './components/lending-contract/lending-contract-create/lending-contract-create.component';
+import { LendingContractDeleteComponent } from './components/lending-contract/lending-contract-delete/lending-contract-delete.component';
+import { LendingContractUpdateComponent } from './components/lending-contract/lending-contract-update/lending-contract-update.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +89,11 @@ import { UserUpdateComponent } from './components/user/user-update/user-update.c
     UserCreateComponent,
     UserDeleteComponent,
     UserUpdateComponent,
+    LendingContractComponent,
+    LendingContractIndexComponent,
+    LendingContractCreateComponent,
+    LendingContractDeleteComponent,
+    LendingContractUpdateComponent,
   ],
   imports: [
     BrowserModule,
