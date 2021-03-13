@@ -12,7 +12,7 @@ import { TypeService } from './../../type/type.service';
   styleUrls: ['./equipment-update.component.css']
 })
 export class EquipmentUpdateComponent implements OnInit {
-  equipment!: Equipment;
+  equipment: Equipment;
   types!: Type[];
 
 
