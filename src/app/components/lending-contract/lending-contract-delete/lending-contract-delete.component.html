@@ -1,1 +1,15 @@
-<p>lending-contract-delete works!</p>
+<mat-card>
+  <mat-card-title>Excluir Contrato</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Usuário"
+        [value]="lendingContact.name" disabled="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Equipamento"
+        [value]="lendingContact.equipment" disabled="">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button color="warn" (click)="delete()" >Deletar</button>
+  <button mat-raised-button color="accent" (click)="cancel()" >Cancelar</button>
+</mat-card>

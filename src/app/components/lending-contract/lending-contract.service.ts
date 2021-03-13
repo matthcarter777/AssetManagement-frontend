@@ -40,6 +40,22 @@ export class LendingContractService {
     );
   }
 
+  show(id: string): Observable<LendingContract> {
+    const url = `${this.basUrl}/${id}`;
+    return this.http.get<LendingContract>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  }
+
+  delete(id: string): Observable<LendingContract> {
+    const url = `${this.basUrl}/${id}`;
+    return this.http.delete<LendingContract>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  }
+
   handelError(e: any): Observable<any> {
     this.showMessage('Ocorreu um erro', true);
     return EMPTY;

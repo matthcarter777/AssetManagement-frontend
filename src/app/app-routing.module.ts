@@ -1,7 +1,10 @@
-import { LendingContractCreateComponent } from './components/lending-contract/lending-contract-create/lending-contract-create.component';
-import { LendingContractComponent } from './view/lending-contract/lending-contract.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+/* Lending Contract */
+import { LendingContractComponent } from './view/lending-contract/lending-contract.component';
+import { LendingContractCreateComponent } from './components/lending-contract/lending-contract-create/lending-contract-create.component';
+import { LendingContractDeleteComponent } from './components/lending-contract/lending-contract-delete/lending-contract-delete.component';
 
 /* Equipment */
 import { EquipmentComponent } from './view/equipment/equipment.component';
@@ -84,6 +87,10 @@ const routes: Routes = [
   {
     path: "contracts/create",
     component: LendingContractCreateComponent
+  },
+  {
+    path: "contracts/delete/:id",
+    component: LendingContractDeleteComponent
   },
 ];
 
