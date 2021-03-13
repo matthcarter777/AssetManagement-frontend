@@ -33,6 +33,13 @@ export class LendingContractService {
     );
   }
 
+  create(lendingContract: LendingContract): Observable<LendingContract> {
+    return this.http.post<LendingContract>(this.basUrl, lendingContract).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  }
+
   handelError(e: any): Observable<any> {
     this.showMessage('Ocorreu um erro', true);
     return EMPTY;

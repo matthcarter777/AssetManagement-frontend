@@ -1,6 +1,6 @@
 export interface LendingContract {
   id?: string;
-  date: string;
+  date?: string;
   name?: string;
   cpf?: string;
   registration?: string;

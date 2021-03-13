@@ -1,3 +1,4 @@
+import { LendingContractCreateComponent } from './components/lending-contract/lending-contract-create/lending-contract-create.component';
 import { LendingContractComponent } from './view/lending-contract/lending-contract.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -79,6 +80,10 @@ const routes: Routes = [
   {
     path: "contracts",
     component: LendingContractComponent
+  },
+  {
+    path: "contracts/create",
+    component: LendingContractCreateComponent
   },
 ];
 
