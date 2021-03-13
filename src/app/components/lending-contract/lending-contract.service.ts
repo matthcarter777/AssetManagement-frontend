@@ -48,6 +48,14 @@ export class LendingContractService {
     );
   }
 
+  update(lendingContract: LendingContract): Observable<LendingContract> {
+    const url = `${this.basUrl}/${lendingContract.id}`;
+    return this.http.put<LendingContract>(url, lendingContract).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  }
+
   delete(id: string): Observable<LendingContract> {
     const url = `${this.basUrl}/${id}`;
     return this.http.delete<LendingContract>(url).pipe(

@@ -1,3 +1,4 @@
+import { LendingContractUpdateComponent } from './components/lending-contract/lending-contract-update/lending-contract-update.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -87,6 +88,10 @@ const routes: Routes = [
   {
     path: "contracts/create",
     component: LendingContractCreateComponent
+  },
+  {
+    path: "contracts/update/:id",
+    component: LendingContractUpdateComponent
   },
   {
     path: "contracts/delete/:id",
