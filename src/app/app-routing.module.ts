@@ -1,3 +1,4 @@
+import { ShowContractComponent } from './components/lending-contract/show-contract/show-contract.component';
 import { LendingContractUpdateComponent } from './components/lending-contract/lending-contract-update/lending-contract-update.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -92,6 +93,10 @@ const routes: Routes = [
   {
     path: "contracts/update/:id",
     component: LendingContractUpdateComponent
+  },
+  {
+    path: "contracts/show/:id",
+    component: ShowContractComponent
   },
   {
     path: "contracts/delete/:id",

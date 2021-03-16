@@ -66,6 +66,7 @@ import { LendingContractIndexComponent } from './components/lending-contract/len
 import { LendingContractCreateComponent } from './components/lending-contract/lending-contract-create/lending-contract-create.component';
 import { LendingContractDeleteComponent } from './components/lending-contract/lending-contract-delete/lending-contract-delete.component';
 import { LendingContractUpdateComponent } from './components/lending-contract/lending-contract-update/lending-contract-update.component';
+import { ShowContractComponent } from './components/lending-contract/show-contract/show-contract.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { LendingContractUpdateComponent } from './components/lending-contract/le
     LendingContractCreateComponent,
     LendingContractDeleteComponent,
     LendingContractUpdateComponent,
+    ShowContractComponent,
   ],
   imports: [
     BrowserModule,

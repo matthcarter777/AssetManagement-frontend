@@ -21,7 +21,7 @@
         [(ngModel)]="lendingContract.equipment_id"
         [(ngModelOption)]="lendingContract.equipment_id"
         >
-        <mat-option *ngFor='let equipment of equipments' [(value)]="equipment.id">
+        <mat-option *ngFor='let equipment of equipmentsFiltered' [(value)]="equipment.id">
            {{ equipment.description }} |
            {{ equipment.identification }}
         </mat-option>

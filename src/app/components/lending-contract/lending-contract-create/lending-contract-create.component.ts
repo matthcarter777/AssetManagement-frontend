@@ -16,6 +16,7 @@ import { EquipmentService } from './../../equipment/equipment.service';
 })
 export class LendingContractCreateComponent implements OnInit {
   equipments!: Equipment[];
+  equipmentsFiltered!: Equipment[];
   users!: User[]
   lendingContract: LendingContract = {
     user_id: '',
@@ -36,7 +37,10 @@ export class LendingContractCreateComponent implements OnInit {
 
     this.equipmentService.index().subscribe(equipment => {
       this.equipments = equipment;
+      this.equipmentsFiltered = this.equipments.filter(equipmentFil => equipmentFil.isAvailable === true);
+      console.log(this.equipmentsFiltered);
     });
+
   }
 
   create(): void {
