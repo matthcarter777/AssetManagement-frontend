@@ -1,3 +1,15 @@
-p {
-  color: black;
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.img {
+  height: 800px;
+  width: 600px;
 }

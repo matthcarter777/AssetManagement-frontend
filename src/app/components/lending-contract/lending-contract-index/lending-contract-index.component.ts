@@ -22,5 +22,4 @@ export class LendingContractIndexComponent implements OnInit {
     });
 
   }
-
 }
