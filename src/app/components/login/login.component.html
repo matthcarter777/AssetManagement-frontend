@@ -1,0 +1,15 @@
+<mat-card class="loginContainer">
+    <div class="titleContainer">
+      <img src="../../../assets/logoItafos.png" alt="Itafos">
+      <h1>Asset Management</h1>
+    </div>
+    <mat-form-field>
+      <input matInput placeholder="Email" class="input" name="email" 
+      [(ngModel)]="user.email" type="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Senha" name="password" 
+      [(ngModel)]="user.password" type="password">
+    </mat-form-field>
+    <button mat-raised-button  (click)="login()" color="primary">Login</button>
+</mat-card>

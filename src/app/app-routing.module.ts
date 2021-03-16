@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { ShowContractComponent } from './components/lending-contract/show-contract/show-contract.component';
 import { LendingContractUpdateComponent } from './components/lending-contract/lending-contract-update/lending-contract-update.component';
 import { NgModule } from '@angular/core';
@@ -28,79 +29,102 @@ import { UserComponent } from './view/user/user.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "login",
+    component: LoginComponent
   },
   {
     path: "categories",
-    component: TypeComponent
+    component: TypeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "categories/create",
-    component: TypeCreateComponent
+    component: TypeCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "categories/update/:id",
-    component: TypeUpdateComponent
+    component: TypeUpdateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "categories/delete/:id",
-    component: TypeDeleteComponent
+    component: TypeDeleteComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "equipments",
-    component: EquipmentComponent
+    component: EquipmentComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "equipments/create",
-    component: EquipmentCreateComponent
+    component: EquipmentCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "equipments/delete/:id",
-    component: EquipmentDeleteComponent
+    component: EquipmentDeleteComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "equipments/update/:id",
-    component: EquipmentUpdateComponent
+    component: EquipmentUpdateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "users",
-    component: UserComponent
+    component: UserComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "users/create",
-    component: UserCreateComponent
+    component: UserCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "users/delete/:id",
-    component: UserDeleteComponent
+    component: UserDeleteComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "users/update/:id",
-    component: UserUpdateComponent
+    component: UserUpdateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contracts",
-    component: LendingContractComponent
+    component: LendingContractComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contracts/create",
-    component: LendingContractCreateComponent
+    component: LendingContractCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contracts/update/:id",
-    component: LendingContractUpdateComponent
+    component: LendingContractUpdateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contracts/show/:id",
-    component: ShowContractComponent
+    component: ShowContractComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "contracts/delete/:id",
-    component: LendingContractDeleteComponent
+    component: LendingContractDeleteComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

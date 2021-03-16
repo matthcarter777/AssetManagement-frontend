@@ -1,3 +1,4 @@
+import { AuthService } from './components/login/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
+  showMenus: boolean = false;
+
+  constructor(
+    private authService: AuthService
+  ) {}
+
+  ngOnInit() {
+    this.authService.showMenusEmitter.subscribe( (show: boolean) => 
+      this.showMenus = show 
+    );
+  }
 }

@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+/* Auth */
+import { AuthService } from './components/login/auth.service';
+
 /* Header */
 import { HeaderComponent } from './components/template/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -68,6 +72,9 @@ import { LendingContractDeleteComponent } from './components/lending-contract/le
 import { LendingContractUpdateComponent } from './components/lending-contract/lending-contract-update/lending-contract-update.component';
 import { ShowContractComponent } from './components/lending-contract/show-contract/show-contract.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,6 +103,7 @@ import { ShowContractComponent } from './components/lending-contract/show-contra
     LendingContractDeleteComponent,
     LendingContractUpdateComponent,
     ShowContractComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -117,7 +125,10 @@ import { ShowContractComponent } from './components/lending-contract/show-contra
     MatSortModule,
     NgxMaskModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,29 @@
+
+.input {
+  width: 300px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+button {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.loginContainer {
+  width: 500px;
+  height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
