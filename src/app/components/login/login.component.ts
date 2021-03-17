@@ -10,7 +10,7 @@ import { User } from './user.model';
 })
 export class LoginComponent implements OnInit {
 
-  private user: User = {
+  user: User = {
     email: '',
     password: ''
   };

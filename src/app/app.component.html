@@ -1,4 +1,5 @@
 <app-header *ngIf="showMenus"></app-header>
-<app-nav></app-nav>
+<app-nav *ngIf="showMenus"></app-nav>
 <app-footer *ngIf="showMenus"></app-footer>
+<app-login class="login" *ngIf="showMenus === false"></app-login>
 
