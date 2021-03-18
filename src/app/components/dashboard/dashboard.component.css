@@ -9,8 +9,8 @@
 .dashboardContainer {
   background-color: #3d3c3c;
 
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 180px;
 
   border-radius: 5%;
 
@@ -69,4 +69,10 @@
 
 .props {
   font-size: 2.5rem;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.chips {
+  margin-top: 20px;
 }

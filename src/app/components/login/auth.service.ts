@@ -25,33 +25,42 @@ export class AuthService {
   ) { }
 
 
-  login(user: User ) {
+  login(user: User ) {    
     this.http.post<User>(this.basUrl, user).subscribe( userLogin => {
       this.userToken = userLogin.token;
-    });
-    if (this.userToken) {
-      this.authenticated = true;
 
-      this.showMenusEmitter.emit(true);
-      
-      this.showMessage(`Bem Vindo!`);
-            
-      localStorage.setItem('token', this.userToken);
-      
-      this.router.navigate(['/']);
-    } else {
-      this.authenticated = false;
-      this.showMessage(`Email/Senha incorreto!`)
-      this.showMenusEmitter.emit(false);
-    }
+      if (this.userToken) {
+        this.authenticated = true;
+        
+        this.showMenusEmitter.emit(true);
+        
+        this.showMessage(`Bem Vindo!`);
+              
+        localStorage.setItem('token', this.userToken);
+        
+        this.router.navigate(['/']);
+      } else {
+        this.authenticated = false;
+        this.showMessage(`Email/Senha incorreto!`)
+        this.showMenusEmitter.emit(false);
+      }
+    });
   }
 
   userAuthenticated() {
-    return this.authenticated;
+    return this.authenticated; 
   }
 
   get() {
-    return localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+
+    if(!token) {
+      this.authenticated = false;
+    }
+
+    this.authenticated = true;
+
+    return this.authenticated;
   }
 
 
