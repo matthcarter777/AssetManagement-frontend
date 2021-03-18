@@ -21,7 +21,7 @@
 
   display: flex;
 
-  box-shadow: 5px 5px 5px #6a6a6d;
+  box-shadow: 0 0 1em rgb(14, 14, 14);
 }
 
 .cardTitle {
@@ -61,10 +61,12 @@
   font-size: 3rem;
   font-weight: 300;
   line-height: 1.2;
+  margin-left: 30px;
 }
 
 .home .subtitle {
   font-size: 1.1rem;
+  margin-left: 30px;
 }
 
 .props {
