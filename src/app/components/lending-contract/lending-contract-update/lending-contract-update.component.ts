@@ -15,7 +15,7 @@ import { UserService } from './../../user/user.service';
   styleUrls: ['./lending-contract-update.component.css']
 })
 export class LendingContractUpdateComponent implements OnInit {
-  equipments!: Equipment[];
+  equipments: Equipment[];
   users!: User[]
   lendingContract!: LendingContract;
 

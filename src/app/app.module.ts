@@ -74,6 +74,7 @@ import { ShowContractComponent } from './components/lending-contract/show-contra
 
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { AuthGuard } from './guards/auth.guard';
     LendingContractUpdateComponent,
     ShowContractComponent,
     LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

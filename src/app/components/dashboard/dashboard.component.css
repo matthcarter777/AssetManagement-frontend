@@ -1,0 +1,72 @@
+.content {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboardContainer {
+  background-color: #3d3c3c;
+
+  width: 200px;
+  height: 200px;
+
+  border-radius: 5%;
+
+  margin-left: 5px;
+  margin-right: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  display: flex;
+
+  box-shadow: 5px 5px 5px #6a6a6d;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 40px;
+}
+
+.titleCard {
+  margin-left: 20px ;
+
+  color: #f5f5f6;
+
+  font-size: 1.3rem;
+  word-break: normal;
+}
+
+.value {
+  margin-left: 20px ;
+  margin-top: 20px;
+  color: #f5f5f6;
+
+  font-size: 2.3rem;
+}
+
+.icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 20px;
+}
+
+.home .title {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.home .subtitle {
+  font-size: 1.1rem;
+}
+
+.props {
+  font-size: 2.5rem;
+}
