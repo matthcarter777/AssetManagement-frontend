@@ -50,6 +50,10 @@ export class AuthService {
     return this.authenticated;
   }
 
+  get() {
+    return localStorage.getItem('token');
+  }
+
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
