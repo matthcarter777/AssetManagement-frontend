@@ -1,15 +1,25 @@
 <mat-toolbar class="header mat-elevation-z4">
-  <span>
-    <a>
-      <img class="logo" src="assets/logoItafos.png" alt="logo">
-    </a>
-  </span>
-  <span class="title-group">
-    <a href="/">
-      <i class="material-icons">
-        home
-      </i>
-      Home
-    </a>
-  </span>
+  <div class="container">
+    <div class="titleContainer">
+      <span>
+        <a>
+          <img class="logo" src="assets/logoItafos.png" alt="logo">
+        </a>
+      </span>
+      <span class="title-group">
+        <a href="/">
+          <i class="material-icons">
+            home
+          </i>
+          Home
+        </a>
+      </span>
+    </div>
+    <div class="userContainer">
+      <div class="userInfos">
+        <span>Mateus</span>
+        <button (click)="logout()" >Sair</button>
+      </div>
+    </div>
+  </div>
 </mat-toolbar>

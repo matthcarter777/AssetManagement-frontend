@@ -21,3 +21,39 @@
 .header .title-group i {
   padding-right: 5px;
 }
+
+.container {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.titleContainer {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: row;
+}
+
+.userContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.userInfos {
+  display: flex;
+  flex-direction: column;
+}
+
+.userInfos > button {
+  color: #f6f6f7;
+  background: unset;
+  border: none;
+}
+
+.userInfos > button:hover {
+  color: #c9c9c9;
+}

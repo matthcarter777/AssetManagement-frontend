@@ -45,6 +45,12 @@ export class AuthService {
         this.showMenusEmitter.emit(false);
       }
     });
+  } 
+
+  logout() {
+    this.authenticated = false;
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
   userAuthenticated() {

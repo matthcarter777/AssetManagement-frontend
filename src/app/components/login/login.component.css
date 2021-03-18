@@ -17,8 +17,8 @@ button {
 }
 
 .loginContainer {
-  width: 500px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
 
   display: flex;
 
@@ -26,4 +26,29 @@ button {
   justify-content: center;
 
   flex-direction: column;
+}
+
+.loginCard {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  width: 400px;
+  height: 400px;
+
+  background: #5e5c5c;
+
+  border-radius: 5px;
+
+  box-shadow: 0 0 1em rgb(14, 14, 14);
+}
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
