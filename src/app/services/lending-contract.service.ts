@@ -1,16 +1,17 @@
+import { LendingContract } from './../components/lending-contract/lendingContract.model';
 import { Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 
-import  { Equipment }  from './equipment.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class EquipmentService {
-  basUrl = 'http://localhost:3333/equipments';
+export class LendingContractService {
+  basUrl = 'http://localhost:3333/contracts';
 
   constructor(
     private snackBar: MatSnackBar,
@@ -26,43 +27,52 @@ export class EquipmentService {
     });
   };
 
-  index(): Observable<Equipment[]> {
-    return this.http.get<Equipment[]>(this.basUrl).pipe(
+  index(): Observable<LendingContract[]> {
+    return this.http.get<LendingContract[]>(this.basUrl).pipe(
       map(obj => obj),
       catchError(e => this.handelError(e))
     );
-  };
+  }
 
-  create(equipment: Equipment): Observable<Equipment> {
-    return this.http.post<Equipment>(this.basUrl, equipment).pipe(
+  create(lendingContract: LendingContract): Observable<LendingContract> {
+    return this.http.post<LendingContract>(this.basUrl, lendingContract).pipe(
       map(obj => obj),
       catchError(e => this.handelError(e))
-    ); 
-  };
+    );
+  }
 
-  show(id: string): Observable<Equipment> {
+  show(id: string): Observable<LendingContract> {
     const url = `${this.basUrl}/${id}`;
-    return this.http.get<Equipment>(url).pipe(
+    return this.http.get<LendingContract>(url).pipe(
       map(obj => obj),
       catchError(e => this.handelError(e))
     );
-  };
+  }
 
-  update(equipment: Equipment): Observable<Equipment> {
-    const url = `${this.basUrl}/${equipment.id}`;
-    return this.http.put<Equipment>(url, equipment).pipe(
+  update(lendingContract: LendingContract): Observable<LendingContract> {
+    const url = `${this.basUrl}/${lendingContract.id}`;
+    return this.http.put<LendingContract>(url, lendingContract).pipe(
       map(obj => obj),
       catchError(e => this.handelError(e))
     );
-  };
+  }
 
-  delete(id: string): Observable<Equipment> {
+  delete(id: string): Observable<LendingContract> {
     const url = `${this.basUrl}/${id}`;
-    return this.http.delete<Equipment>(url).pipe(
+    return this.http.delete<LendingContract>(url).pipe(
       map(obj => obj),
       catchError(e => this.handelError(e))
     );
-  };
+  }
+
+  download(id: string): Observable<LendingContract> {
+    console.log(id);
+    const url = `${this.basUrl}/create/${id}`;
+    return this.http.get<LendingContract>(url).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  }
 
   handelError(e: any): Observable<any> {
     this.showMessage('Ocorreu um erro', true);

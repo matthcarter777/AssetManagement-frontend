@@ -5,9 +5,9 @@ import { Equipment } from './../../equipment/equipment.model';
 import { User } from './../../user/user.model';
 import { LendingContract } from '../lendingContract.model';
 
-import { UserService } from './../../user/user.service';
-import { LendingContractService } from './../lending-contract.service';
-import { EquipmentService } from './../../equipment/equipment.service';
+import { UserService } from 'src/app/services//user.service';
+import { LendingContractService } from 'src/app/services/lending-contract.service';
+import { EquipmentService } from 'src/app/services/equipment.service';
 
 @Component({
   selector: 'app-lending-contract-create',

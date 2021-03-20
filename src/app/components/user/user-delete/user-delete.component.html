@@ -17,10 +17,6 @@
       <input matInput placeholder="E-mail" type="email"
       [(ngModel)]="user.email" name="email" disabled="">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Senha" type="password"
-      [(ngModel)]="user.password" name="password" disabled="">
-    </mat-form-field>
   </form>
   <button mat-raised-button (click)="delete()" color="primary">
     Deletar

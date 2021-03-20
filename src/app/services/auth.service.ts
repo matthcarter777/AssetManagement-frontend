@@ -1,11 +1,9 @@
 import { Router } from '@angular/router';
 import { Observable, EMPTY } from 'rxjs';
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
-import { User } from './user.model';
-
+import { UserLogin } from '../models/userLogin.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +11,7 @@ import { User } from './user.model';
 export class AuthService {
   basUrl = 'http://localhost:3333/login';
 
-  private authenticated: boolean = false;
   userToken?: string; 
-
-  showMenusEmitter = new EventEmitter<boolean>();
 
   constructor(
     private router: Router,
@@ -25,48 +20,44 @@ export class AuthService {
   ) { }
 
 
-  login(user: User ) {    
-    this.http.post<User>(this.basUrl, user).subscribe( userLogin => {
-      this.userToken = userLogin.token;
+  login(user: UserLogin ) {    
+    this.http.post<UserLogin>(this.basUrl, user).subscribe( response => {
+      this.userToken = response.token;
 
-      if (this.userToken) {
-        this.authenticated = true;
-        
-        this.showMenusEmitter.emit(true);
-        
+      if (this.userToken) {        
         this.showMessage(`Bem Vindo!`);
               
         localStorage.setItem('token', this.userToken);
         
         this.router.navigate(['/']);
       } else {
-        this.authenticated = false;
-        this.showMessage(`Email/Senha incorreto!`)
-        this.showMenusEmitter.emit(false);
+        this.remove()
+        this.showMessage(`Email/Senha incorreto!`);
       }
     });
   } 
 
   logout() {
-    this.authenticated = false;
-    localStorage.removeItem('token');
+    this.remove();
     this.router.navigate(['/login']);
   }
 
   userAuthenticated() {
-    return this.authenticated; 
+    const findToken = this.get();
+
+    if( findToken ) {
+      return true; 
+    } 
+
+    return !!findToken;
   }
 
   get() {
-    const token = localStorage.getItem('token');
+    return localStorage.getItem('token');
+  }
 
-    if(!token) {
-      this.authenticated = false;
-    }
-
-    this.authenticated = true;
-
-    return this.authenticated;
+  remove() {
+    localStorage.removeItem('token');
   }
 
 

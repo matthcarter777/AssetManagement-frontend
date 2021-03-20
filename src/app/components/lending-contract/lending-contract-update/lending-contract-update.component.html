@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-title>Novo Contrato de Comodato</mat-card-title>
-  <form>
+  <form *ngIf="equipments && lendingContract">
     <mat-form-field appearance="fill">
       <mat-label-title class="title">Usuário</mat-label-title>
       <mat-select  

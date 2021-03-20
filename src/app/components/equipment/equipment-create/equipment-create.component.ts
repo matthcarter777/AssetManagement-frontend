@@ -2,10 +2,10 @@ import { Equipment } from './../equipment.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { EquipmentService } from './../equipment.service';
+import { EquipmentService } from 'src/app/services/equipment.service';
 
 /* Type */
-import { TypeService } from './../../type/type.service';
+import { TypeService } from 'src/app/services/type.service';
 import  { Type } from '../../type/type.model';
 
 
@@ -15,11 +15,14 @@ import  { Type } from '../../type/type.model';
   styleUrls: ['./equipment-create.component.css']
 })
 export class EquipmentCreateComponent implements OnInit {
-  types: Type[] | undefined;
+  types!: Type[];
   equipment: Equipment ={
     description: '',
     identification: '',
-    type_id: ''
+    type_id: '',
+    available: '',
+    isAvailable: false,
+    type: '',
   };
   
   constructor(

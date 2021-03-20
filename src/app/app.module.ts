@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-/* Auth */
-import { AuthService } from './components/login/auth.service';
-
 /* Header */
 import { HeaderComponent } from './components/template/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -75,6 +72,7 @@ import { ShowContractComponent } from './components/lending-contract/show-contra
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ContentComponent } from './components/shared/layout/content/content.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +104,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ShowContractComponent,
     LoginComponent,
     DashboardComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -128,7 +127,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NgxMaskModule.forRoot(),
   ],
   providers: [
-    AuthService,
     AuthGuard
   ],
   bootstrap: [AppComponent]

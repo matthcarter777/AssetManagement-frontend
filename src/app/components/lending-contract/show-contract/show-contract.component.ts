@@ -1,6 +1,6 @@
 import { LendingContract } from './../lendingContract.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { LendingContractService } from './../lending-contract.service';
+import { LendingContractService } from 'src/app/services/lending-contract.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { UserService } from './../user.service';
+import { UserService } from 'src/app/services/user.service';
 import { User } from './../user.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-update.component.css']
 })
 export class UserUpdateComponent implements OnInit {
-  user: User | undefined;
+  user!: User;
 
   constructor(
     private userService: UserService,

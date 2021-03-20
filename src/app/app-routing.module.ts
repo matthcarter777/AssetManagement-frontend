@@ -1,3 +1,4 @@
+import { ContentComponent } from './components/shared/layout/content/content.component';
 import { LoginComponent } from './components/login/login.component';
 import { ShowContractComponent } from './components/lending-contract/show-contract/show-contract.component';
 import { LendingContractUpdateComponent } from './components/lending-contract/lending-contract-update/lending-contract-update.component';
@@ -34,97 +35,32 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent,
-    canActivate: [AuthGuard]
+    component: ContentComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: "", component: HomeComponent },
+      { path: "categories", component: TypeComponent},
+      { path: "categories/create", component: TypeCreateComponent},
+      { path: "categories/update/:id", component: TypeUpdateComponent},
+      { path: "categories/delete/:id", component: TypeDeleteComponent},
+      { path: "equipments", component: EquipmentComponent},
+      { path: "equipments/create", component: EquipmentCreateComponent},
+      { path: "equipments/delete/:id", component: EquipmentDeleteComponent},
+      { path: "equipments/update/:id", component: EquipmentUpdateComponent},
+      { path: "users", component: UserComponent},
+      { path: "users/create", component: UserCreateComponent},
+      { path: "users/delete/:id", component: UserDeleteComponent},
+      { path: "users/update/:id", component: UserUpdateComponent},
+      { path: "contracts", component: LendingContractComponent},
+      { path: "contracts/create", component: LendingContractCreateComponent},
+      { path: "contracts/update/:id", component: LendingContractUpdateComponent},
+      { path: "contracts/show/:id", component: ShowContractComponent},
+      { path: "contracts/delete/:id", component: LendingContractDeleteComponent},
+    ]
   },
   {
     path: "login",
     component: LoginComponent
-  },
-  {
-    path: "categories",
-    component: TypeComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "categories/create",
-    component: TypeCreateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "categories/update/:id",
-    component: TypeUpdateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "categories/delete/:id",
-    component: TypeDeleteComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "equipments",
-    component: EquipmentComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "equipments/create",
-    component: EquipmentCreateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "equipments/delete/:id",
-    component: EquipmentDeleteComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "equipments/update/:id",
-    component: EquipmentUpdateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "users",
-    component: UserComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "users/create",
-    component: UserCreateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "users/delete/:id",
-    component: UserDeleteComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "users/update/:id",
-    component: UserUpdateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contracts",
-    component: LendingContractComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contracts/create",
-    component: LendingContractCreateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contracts/update/:id",
-    component: LendingContractUpdateComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contracts/show/:id",
-    component: ShowContractComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "contracts/delete/:id",
-    component: LendingContractDeleteComponent,
-    canActivate: [AuthGuard]
   },
 ];
 

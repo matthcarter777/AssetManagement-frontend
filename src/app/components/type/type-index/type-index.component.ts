@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TypeService } from './../type.service';
+import { TypeService } from 'src/app/services/type.service';
 import { Type } from '../type.model';
 
 @Component({

@@ -5,9 +5,9 @@ import { Equipment } from './../../equipment/equipment.model';
 import { User } from './../../user/user.model';
 import { LendingContract } from '../lendingContract.model';
 
-import { LendingContractService } from './../lending-contract.service';
-import { EquipmentService } from './../../equipment/equipment.service';
-import { UserService } from './../../user/user.service';
+import { LendingContractService } from 'src/app/services/lending-contract.service';
+import { EquipmentService } from 'src/app/services/equipment.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-lending-contract-update',
@@ -25,7 +25,7 @@ export class LendingContractUpdateComponent implements OnInit {
     private lendingContractService: LendingContractService,
     private router: Router,
     private route: ActivatedRoute,
-  ) { }
+  ) {  }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');

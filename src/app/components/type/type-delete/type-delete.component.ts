@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { TypeService } from './../type.service';
+import { TypeService } from 'src/app/services/type.service';
 import { Type } from '../type.model';
 
 @Component({
@@ -10,9 +10,7 @@ import { Type } from '../type.model';
   styleUrls: ['./type-delete.component.css']
 })
 export class TypeDeleteComponent implements OnInit {
-  type: Type | undefined;
-
-
+  type!: Type;
 
   constructor(
     private typeService: TypeService,

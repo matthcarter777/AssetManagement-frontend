@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { User } from './../user.model';
-import { UserService } from './../user.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-user-index',

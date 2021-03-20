@@ -1,6 +1,6 @@
 import { User } from './../user.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UserService } from './../user.service';
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-delete.component.css']
 })
 export class UserDeleteComponent implements OnInit {
-  user: User | undefined;
+  user!: User;
 
   constructor(
     private userService: UserService,

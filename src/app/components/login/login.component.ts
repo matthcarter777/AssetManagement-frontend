@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UserLogin } from 'src/app/models/userLogin.model';
 
-import { AuthService } from './auth.service';
-import { User } from './user.model';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { User } from './user.model';
 })
 export class LoginComponent implements OnInit {
 
-  user: User = {
+  user: UserLogin = {
     email: '',
     password: ''
   };

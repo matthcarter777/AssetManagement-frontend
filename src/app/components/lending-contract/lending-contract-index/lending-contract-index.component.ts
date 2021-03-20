@@ -1,4 +1,4 @@
-import { LendingContractService } from './../lending-contract.service';
+import { LendingContractService } from 'src/app/services/lending-contract.service';
 import { Component, OnInit } from '@angular/core';
 
 import { LendingContract } from '../lendingContract.model';
