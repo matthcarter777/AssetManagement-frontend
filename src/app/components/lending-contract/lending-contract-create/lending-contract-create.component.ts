@@ -21,6 +21,13 @@ export class LendingContractCreateComponent implements OnInit {
   lendingContract: LendingContract = {
     user_id: '',
     equipment_id: '',
+    cpf: '',
+    date: '',
+    equipment: '',
+    identification: '',
+    name: '',
+    registration: '',
+    id: ''
   }
 
   constructor(

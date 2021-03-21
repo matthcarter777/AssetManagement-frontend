@@ -15,7 +15,7 @@
         name="type_id"
         [(ngModel)]="equipment.type_id"
         >
-        <mat-option *ngFor='let type of types' [(value)]="type.id">{{ type.name }}</mat-option>
+        <mat-option *ngFor='let type of types' [value]="type.id">{{ type.name }}</mat-option>
       </mat-select>
     </mat-form-field>
   </form>

@@ -10,7 +10,7 @@ import { EquipmentService } from 'src/app/services/equipment.service';
   styleUrls: ['./equipment-delete.component.css']
 })
 export class EquipmentDeleteComponent implements OnInit {
-  equipment: Equipment | undefined;
+  equipment!: Equipment;
 
   constructor(
     private equipmentService: EquipmentService,

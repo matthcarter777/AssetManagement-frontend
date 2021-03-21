@@ -2,13 +2,12 @@
   <mat-card-title>Novo Contrato de Comodato</mat-card-title>
   <form *ngIf="equipments && lendingContract">
     <mat-form-field appearance="fill">
-      <mat-label-title class="title">Usuário</mat-label-title>
+      <mat-label class="title">Usuário</mat-label>
       <mat-select  
         name="user_id"
         [(ngModel)]="lendingContract.user_id"
-        [(ngModelOption)]="lendingContract.user_id"
         >
-        <mat-option *ngFor='let user of users' [(value)]="user.id">
+        <mat-option *ngFor='let user of users' [value]="user.id">
            {{ user.name }} |
            {{ user.cpf | mask: '000.000.000-00' }}
         </mat-option>
@@ -19,9 +18,8 @@
       <mat-select  
         name="equipment_id"
         [(ngModel)]="lendingContract.equipment_id"
-        [(ngModelOption)]="lendingContract.equipment_id"
         >
-        <mat-option *ngFor='let equipment of equipments' [(value)]="equipment.id">
+        <mat-option *ngFor='let equipment of equipments' [value]="equipment.id">
            {{ equipment.description }} |
            {{ equipment.identification }}
         </mat-option>
