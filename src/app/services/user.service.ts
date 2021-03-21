@@ -1,4 +1,5 @@
-import { User } from './../components/user/user.model';
+import { User } from './../models/user.model';
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EMPTY, Observable } from 'rxjs';
