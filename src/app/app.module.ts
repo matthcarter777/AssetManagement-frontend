@@ -1,3 +1,4 @@
+import { TokenInterceptor } from './interceptors/token.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -39,7 +40,7 @@ import { EquipmentComponent } from './view/equipment/equipment.component';
 import { EquipmentCreateComponent } from './components/equipment/equipment-create/equipment-create.component';
 
 /* HTTP */
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TypeIndexComponent } from './components/type/type-index/type-index.component';
 
 /* Table */
@@ -127,7 +128,8 @@ import { ContentComponent } from './components/shared/layout/content/content.com
     NgxMaskModule.forRoot(),
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
