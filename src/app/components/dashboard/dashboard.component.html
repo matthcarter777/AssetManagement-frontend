@@ -5,96 +5,26 @@
   <mat-card-subtitle class="subtitle">
     Gestão de ativos de TI!
   </mat-card-subtitle>
-  <div class="content">
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Rádios Totais</p>
-        <p class="value"> {{ dashboardData.radioTotal }} </p>
+  <mat-list class="container">
+    <mat-list-item class="item" *ngFor="let dashboardData of dashboardData">
+      <div class="dashboardContainer">
+        <div class="icon">
+          <i class="material-icons">
+            inventory_2
+          </i>
+        </div>
+        <div class="card">
+          <div class="cardTitle">
+            <p class="titleCard">{{ dashboardData.name }} Totais</p>
+            <p class="value"> {{ dashboardData.total }} </p>
+          </div>
+          <div class="divider"></div>
+          <div class="cardTitle">
+            <p class="titleCard">{{ dashboardData.name }} disponiveis</p>
+            <p class="value"> {{ dashboardData.totalAvailable }} </p>
+          </div>
+        </div>
       </div>
-      <div class="icon">
-        <span class="material-icons props">
-          radio
-        </span>
-      </div>
-    </div>
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Notebooks Totais</p>
-        <p class="value"> {{ dashboardData.notebookTotal }} </p>
-      </div>
-      <div class="icon">
-        <span class="material-icons props">
-          laptop
-        </span>
-      </div>
-    </div>
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Celulares Totais</p>
-        <p class="value"> {{ dashboardData.cellphoneTotal }} </p>
-      </div>
-      <div class="icon">
-        <span class="material-icons props">
-          phone_iphone
-        </span>
-      </div>
-    </div>
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Chips Totais</p>
-        <p class="value chips"> {{ dashboardData.simTotal }} </p>
-      </div>
-      <div class="icon">
-        <span class="material-icons props">
-          sim_card
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="content">
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Rádios disponiveis</p>
-        <p class="value"> {{ dashboardData.radioAvailable }} </p>
-      </div>
-      <div class="icon">
-        <span class="material-icons props">
-          radio
-        </span>
-      </div>
-    </div>
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Notebooks disponiveis</p>
-        <p class="value"> {{ dashboardData.notebookAvailable }} </p>
-      </div>
-      <div class="icon">
-        <span class="material-icons props">
-          laptop
-        </span>
-      </div>
-    </div>
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Celulares disponiveis</p>
-        <p class="value"> {{ dashboardData.cellphoneAvailable }} </p>
-      </div>
-      <div class="icon">
-        <span class="material-icons props">
-          phone_iphone
-        </span>
-      </div>
-    </div>
-    <div class="dashboardContainer">
-      <div class="cardTitle">
-        <p class="titleCard">Chips disponiveis</p>
-        <p class="value"> {{ dashboardData.simAvailable }} </p>
-      </div>
-      <div class="icon">
-        <span class="material-icons props">
-          sim_card
-        </span>
-      </div>
-    </div>
-  </div>
+    </mat-list-item>
+  </mat-list>
 </mat-card>

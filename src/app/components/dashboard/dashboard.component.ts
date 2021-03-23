@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.dashboardService.index().subscribe(data => {
       this.dashboardData =  data;
+      console.log(this.dashboardData);
     })
   }
 
