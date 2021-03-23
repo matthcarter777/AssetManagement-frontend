@@ -1,3 +1,4 @@
+import { BACKEND_API } from './../app.api';
 import { LendingContract } from './../models/lendingContract.model';
 import { Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +12,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LendingContractService {
-  basUrl = 'http://localhost:3333/contracts';
+  basUrl = `${BACKEND_API}/contracts`;
 
   constructor(
     private snackBar: MatSnackBar,

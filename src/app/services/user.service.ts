@@ -1,3 +1,4 @@
+import { BACKEND_API } from './../app.api';
 import { User } from './../models/user.model';
 
 import { Injectable } from '@angular/core';
@@ -11,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 export class UserService {
-  basUrl = 'http://localhost:3333/users';
+  basUrl = `${BACKEND_API}/users`;
 
   constructor(
     private snackBar: MatSnackBar,

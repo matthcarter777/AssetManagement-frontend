@@ -1,3 +1,4 @@
+import { BACKEND_API } from './../app.api';
 import { Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,7 +11,7 @@ import { Equipment } from './../models/equipment.model';
   providedIn: 'root'
 })
 export class EquipmentService {
-  basUrl = 'http://localhost:3333/equipments';
+  basUrl = `${BACKEND_API}/equipments`;
 
   constructor(
     private snackBar: MatSnackBar,

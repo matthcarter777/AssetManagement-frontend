@@ -1,3 +1,4 @@
+import { BACKEND_API } from './../app.api';
 import { Type } from './../models/type.model';
 
 import { Injectable } from '@angular/core';
@@ -12,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class TypeService {
 
-  basUrl = 'http://localhost:3333/types';
+  basUrl = `${BACKEND_API}/types`;
 
   constructor(
     private snackBar: MatSnackBar,

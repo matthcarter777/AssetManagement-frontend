@@ -1,3 +1,4 @@
+import { BACKEND_API } from './../app.api';
 import { Router } from '@angular/router';
 import { Observable, EMPTY } from 'rxjs';
 import { Injectable } from '@angular/core';
@@ -9,7 +10,7 @@ import { UserLogin } from '../models/userLogin.model';
   providedIn: 'root'
 })
 export class AuthService {
-  basUrl = 'http://localhost:3333/login';
+  basUrl = `${BACKEND_API}/login`;
 
   userToken?: string; 
 
