@@ -1,9 +1,10 @@
-import { Equipment } from './../components/equipment/equipment.model';
 import { Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
+
+import { Equipment } from './../models/equipment.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,12 +1,10 @@
-import { Equipment } from './../equipment.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { EquipmentService } from 'src/app/services/equipment.service';
-
-/* Type */
 import { TypeService } from 'src/app/services/type.service';
-import  { Type } from '../../type/type.model';
+import { Type } from './../../../models/type.model';
+import { Equipment } from './../../../models/equipment.model';
 
 
 @Component({

@@ -2,7 +2,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TypeService } from 'src/app/services/type.service';
 import { Component, OnInit } from '@angular/core';
 
-import { Type } from '../type.model';
+import { Type } from './../../../models/type.model';
+
 
 @Component({
   selector: 'app-type-update',

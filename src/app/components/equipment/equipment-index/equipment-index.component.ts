@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { EquipmentService } from 'src/app/services/equipment.service';
-import { Equipment } from './../equipment.model';
+import { Equipment } from './../../../models/equipment.model';
 
 @Component({
   selector: 'app-equipment-index',

@@ -1,8 +1,7 @@
 import { LendingContractService } from 'src/app/services/lending-contract.service';
 import { Component, OnInit } from '@angular/core';
 
-import { LendingContract } from '../lendingContract.model';
-
+import { LendingContract } from './../../../models/lendingContract.model';
 @Component({
   selector: 'app-lending-contract-index',
   templateUrl: './lending-contract-index.component.html',

@@ -1,9 +1,10 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Equipment } from './../equipment.model';
+
+import { Type } from './../../../models/type.model';
+import { Equipment } from './../../../models/equipment.model';
 import { EquipmentService } from 'src/app/services/equipment.service';
-import  { Type } from '../../type/type.model';
 import { TypeService } from 'src/app/services/type.service';
 
 @Component({

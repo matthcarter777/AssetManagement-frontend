@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Equipment } from './../../equipment/equipment.model';
 import { User } from './../../../models/user.model';
-import { LendingContract } from '../lendingContract.model';
+import { Equipment } from './../../../models/equipment.model';
+import { LendingContract } from './../../../models/lendingContract.model';
 
 import { UserService } from 'src/app/services//user.service';
 import { LendingContractService } from 'src/app/services/lending-contract.service';

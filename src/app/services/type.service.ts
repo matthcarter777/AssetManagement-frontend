@@ -1,4 +1,5 @@
-import { Type } from './../components/type/type.model';
+import { Type } from './../models/type.model';
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EMPTY, Observable } from 'rxjs';

@@ -1,4 +1,4 @@
-import { LendingContract } from './../components/lending-contract/lendingContract.model';
+import { LendingContract } from './../models/lendingContract.model';
 import { Observable, EMPTY } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';

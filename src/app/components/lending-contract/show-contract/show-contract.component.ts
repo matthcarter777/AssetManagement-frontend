@@ -1,7 +1,9 @@
-import { LendingContract } from './../lendingContract.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LendingContractService } from 'src/app/services/lending-contract.service';
 import { Component, OnInit } from '@angular/core';
+
+import { LendingContract } from './../../../models/lendingContract.model';
+
 
 @Component({
   selector: 'app-show-contract',
