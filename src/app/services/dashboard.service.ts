@@ -16,7 +16,7 @@ export class DashboardService {
     private http: HttpClient
   ) { }
 
-  index(): Observable<Dashboard> {
-    return this.http.get<Dashboard>(this.basUrl)
+  index(): Observable<Dashboard[]> {
+    return this.http.get<Dashboard[]>(this.basUrl)
   }
 }

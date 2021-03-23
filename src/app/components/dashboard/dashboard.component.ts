@@ -9,7 +9,7 @@ import { DashboardService } from 'src/app/services/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  dashboardData!: Dashboard;
+  dashboardData!: Dashboard[];
 
   constructor(
     private dashboardService: DashboardService
@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.dashboardService.index().subscribe(data => {
       this.dashboardData =  data;
-      console.log(this.dashboardData);
     })
   }
 
