@@ -24,12 +24,13 @@
 
 .cardTitle{
   margin: 20px;
+  width: 90px;
 }
 
 .dashboardContainer {
   background-color: #3d3c3c;
 
-  width: 230px;
+  width: 240px;
   height: 180px;
 
   border-radius: 5%;
@@ -61,8 +62,6 @@
 }
 
 .titleCard {
-  margin-left: 10px ;
-
   color: #f5f5f6;
 
   font-size: 1rem;
@@ -71,7 +70,7 @@
 
 .value {
   margin-left: 20px ;
-  margin-top: 20px;
+  margin-top: 15px;
   color: #f5f5f6;
 
   font-size: 2.3rem;
