@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.container {
+.container { 
   margin-top: 100px;
   display: flex;
 
@@ -16,10 +16,6 @@
 
 .item {
   margin-right: 30px;
-}
-
-.icon {
-
 }
 
 .cardTitle{
