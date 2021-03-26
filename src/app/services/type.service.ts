@@ -40,7 +40,7 @@ export class TypeService {
     return this.http.post<Type>(this.basUrl, type).pipe(
       map(obj => obj),
       catchError(e => this.handleError(e))
-    );
+    )
   };
 
   show(id: string): Observable<Type> {
