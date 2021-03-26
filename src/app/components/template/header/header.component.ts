@@ -1,7 +1,8 @@
+import { Component, OnInit } from '@angular/core';
+
 import { UserService } from 'src/app/services/user.service';
 import { TokenService } from './../../../services/token.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
     this.userService.show(userId).subscribe(user => {
       this.name = user.name;
-    })
+    });
   }
 
   logout() {

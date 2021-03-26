@@ -1,9 +1,12 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { LendingContractService } from 'src/app/services/lending-contract.service';
 import { Component, OnInit } from '@angular/core';
 
 import { LendingContract } from './../../../models/lendingContract.model';
 
+import { UserService } from 'src/app/services/user.service';
+import { TokenService } from './../../../services/token.service';
+import { LendingContractService } from 'src/app/services/lending-contract.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-show-contract',
@@ -13,11 +16,15 @@ import { LendingContract } from './../../../models/lendingContract.model';
 export class ShowContractComponent implements OnInit {
   
   lendingContact!: LendingContract;
+  name!: string;
 
   constructor(
     private lendingContractService: LendingContractService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private tokenService: TokenService,
+    private userService: UserService,
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +32,15 @@ export class ShowContractComponent implements OnInit {
 
     this.lendingContractService.showContract(id as string).subscribe(lendingContract => {
       this.lendingContact = lendingContract;
+    });
+
+    const token = this.authService.get()
+    const decodedToken = this.tokenService.payload(token);
+
+    const userId = decodedToken.sub;
+
+    this.userService.show(userId).subscribe(user => {
+      this.name = user.name;
     });
   }
 
