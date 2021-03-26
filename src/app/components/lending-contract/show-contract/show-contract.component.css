@@ -13,3 +13,58 @@ button {
   height: 800px;
   width: 600px;
 }
+
+.printContainer {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffff;
+  color: #000;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-top: 50px;
+  text-decoration: underline #000;
+}
+
+.paragraph {
+   margin: 20px 90px 5px 90px;
+}
+
+.date {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.signatures {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.signature {
+  margin-top: 20px;
+}
+
+.witnessesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.witnesses {
+  margin-left: 30px;
+}

@@ -1,7 +1,129 @@
 <mat-card>
-  <mat-card-title>Download Contrato</mat-card-title>
-  <form>
-  </form>
-  <button mat-raised-button color="warn" (click)="download()" >Baixar</button>
-  <button mat-raised-button color="accent" (click)="cancel()" >Cancelar</button>
+  <mat-card-title>Contrato {{ lendingContact.name }}</mat-card-title>
+  <div id="printContainer" class="printContainer">
+    <div class="titleContainer">
+      <h1 class="title">CONTRATO DE COMODATO</h1>
+    </div>
+
+    <p class="paragraph"> <strong>COMODANTE: ITAFÓS MINERAÇÃO S/A.,</strong> com matriz estabelecida à Rodovia GO-110 de Campos Belos a Novo Alegre Km 5,5 à esquerda Km 16, local denominado Fazenda São Bento, Zona Rural,
+       município de Arraias – TO, CEP 77330-000,com ato constitutivo arquivado na Junta Comercial do estado de Tocantins sob nº 17200245001 em sessão de 06/10/2003, inscrita no CNPJ sob 
+       nº 05.919.578/0001-60, doravante designada “ITAFÓS”; 
+    </p>
+
+    <p class="paragraph"> <strong>COMODATÁRIO: {{lendingContact.name }} Brasileiro, Analista de RH, Portador do CPF: {{ lendingContact.cpf | mask: '000.000.000-99' }} Matricula - {{ lendingContact.registration }} - </strong> 
+      doravante designado "<strong>COMODATÁRIO</strong>"
+    </p>
+
+    <p class="paragraph">As PARTES acima identificadas têm, entre si, justo e acertado o presente Contrato de COMODATO, que regerá pelas cláusulas seguinte: <strong>COMODATO</strong>, que regerá pelas cláusulas seguinte:
+    </p>
+    
+    <p class="paragraph"> 1. <strong>CLÁUSULA PRIMEIRA – DO OBJETO DO CONTRATO: </strong>
+    </p>
+
+    <p class="paragraph"> 1.1. O presente contrato tem como OBJETO, a transferência, pela <strong>COMODANTE</strong> ao <strong>COMODATÁRIO</strong>, dos direitos de uso e gozo de (01) {{ lendingContact.equipment }}
+      Número de série dos aparelhos: {{ lendingContact.identification }}
+    </p>
+
+    <p class="paragraph"> 2. <strong>CLÁUSULA SEGUNDA – DAS OBRIGAÇÕES DAS PARTES:  </strong>
+    </p>
+
+    <p class="paragraph"> 2.1. O <strong>COMODANTE</strong> é responsável pelo pagamento 
+      do plano em que se enquadra o Comodatário, compreendidas no período de vigência deste contrato, até o limite do plano 
+      exceto as utilizações particulares.
+    </p>
+
+    <p class="paragraph"> 2.2. É proibido ao <strong>COMODATÁRIO</strong> emprestar o objeto descrito no item 1.1 deste contrato, a terceiros. 
+    </p>
+
+    <p class="paragraph"> 2.3. O <strong>COMODATÁRIO</strong> everá comunicar imediatamente à <strong>COMODANTE</strong>
+      os defeitos que surgirem no bem, que providenciará o conserto do mesmo. 
+    </p>
+
+    <p class="paragraph"> 2.4. No caso de roubo, furto ou perda, o <strong>COMODATÁRIO</strong> se compromete a registrar a 
+      ocorrência junto à polícia competente, devendo encaminhar cópia do registro da ocorrência para a <strong>ITAFÓS</strong>
+      dentro de 02 (dois) dias úteis.
+    </p>
+
+    <p class="paragraph"> 3. <strong> CLÁUSULA TERCEIRA – DA DEVOLUÇÃO:</strong>
+    </p>
+
+    <p class="paragraph"> 3.1 O <strong>COMODATÁRIO</strong> deverá devolver o aparelho e seus respectivos acessórios à 
+      <strong>COMODANTE</strong> quando for por esta solicitado, nas mesmas condições em que estava quando o recebeu, 
+      em perfeitas condições de uso, respondendo pelos danos ou prejuízos causados.
+    </p>
+
+    <p class="paragraph"> 3.2. A devolução deve se dar no prazo de 24 (vinte e quatro) horas após o  
+      <strong>COMODATÁRIO</strong> ter recebido/entregue o aviso de desligamento/encerramento, 
+      seja por e-mail, correspondência ou por outros meios, independente de justificativa.
+    </p>
+
+    <p class="paragraph"> 4. <strong>CLÁUSULA QUARTA – DA DURAÇÃO:</strong>
+    </p>
+
+    <p class="paragraph"> 4.1. ste contrato tem a duração de 02 dois anos, podendo ser prorrogado tacitamente por prazo indeterminado.
+    </p>
+
+    <p class="paragraph"> 5. <strong>CLÁUSULA QUINTA – DA RESCISÃO:</strong>
+    </p>
+
+    <p class="paragraph"> 5.1. O presente contrato poderá ser rescindido a qualquer tempo, a critério das partes.
+    </p>
+    
+    <p class="paragraph"> 5.2.  O presente contrato será rescindido imediatamente quando for 
+      infringida qualquer cláusula pelo <strong>COMODATÁRIO</strong>, bem como quando ocorrer a rescisão do contrato de trabalho firmado entre o 
+      <strong>COMODATÁRIO</strong> e a <strong>ITAFÓS</strong> imediatamente.
+    </p>
+    
+    <p class="paragraph"> 6. <strong>CLÁUSULA SEXTA – CONDIÇÕES GERAIS:</strong>
+    </p>
+
+    <p class="paragraph"> 6.1. O presente instrumento passa a valer a partir da assinatura pelas partes.
+    </p>
+
+    <p class="paragraph"> 7. <strong>CLÁUSULA SÉTIMA – DO FORO:</strong>
+    </p>
+
+    <p class="paragraph"> 7.1. Para dirimir quaisquer controvérsias oriundas do <strong>CONTRATO</strong>
+      , as partes elegem o foro da comarca de São Paulo/SP. 
+    </p>
+    
+    <p class="paragraph"> Por estarem assim justos e contratados, firmam o presente instrumento, 
+      em 03 (três) vias de igual teor, juntamente com 02 (duas) testemunhas. 
+    </p>
+
+    <div class="titleContainer">
+      <p class="date">Arraias, {{ lendingContact.date }}. </p>
+    </div>
+   
+    <div class="signatures">
+      <p><strong>COMODANTE: </strong></p>
+      <p class="signature">________________________________________________</p>
+      <p><strong> Mateus Henrique</strong></p>
+    </div>
+   
+    <div class="signatures">
+      <p><strong>COMODATÁRIO:  </strong></p>
+      <p class="signature">________________________________________________</p>
+      <p><strong>{{ lendingContact.name }}</strong></p>
+      <p><strong>{{ lendingContact.cpf | mask: '000.000.000-99' }}</strong></p>
+    </div>
+
+    <p class="paragraph"><strong>Testemunhas: </strong>
+    </p>
+
+    <div class="witnessesContainer">
+      <div class="witnesses">
+        <p>1.________________________________________________</p>
+        <p>Nome:</p>
+        <p>CPF:</p>
+      </div>
+      <div class="witnesses">
+        <p>2.________________________________________________</p>
+        <p>Nome:</p>
+        <p>CPF:</p>
+      </div>
+    </div>
+  </div>
+  <button mat-raised-button color="warn" (click)="goToPagePrint()" >Imprimir</button>
+  <button mat-raised-button color="accent" (click)="cancel()" >Voltar</button>
 </mat-card>

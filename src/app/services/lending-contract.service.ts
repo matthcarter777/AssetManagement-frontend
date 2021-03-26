@@ -66,8 +66,7 @@ export class LendingContractService {
     );
   }
 
-  download(id: string): Observable<LendingContract> {
-    console.log(id);
+  showContract(id: string): Observable<LendingContract> {
     const url = `${this.basUrl}/create/${id}`;
     return this.http.get<LendingContract>(url).pipe(
       map(obj => obj),

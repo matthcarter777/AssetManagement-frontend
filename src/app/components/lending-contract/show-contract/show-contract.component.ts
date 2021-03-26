@@ -23,22 +23,24 @@ export class ShowContractComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.lendingContractService.show(id as string).subscribe(lendingContract => {
+    this.lendingContractService.showContract(id as string).subscribe(lendingContract => {
       this.lendingContact = lendingContract;
     });
   }
 
-  download(): void {
-    console.log(this.lendingContact)
+  goToPagePrint(): void {
+    const content = document.getElementById('printContainer')?.innerHTML;
+    const  screenToPrint = window.open();
 
-    this.lendingContractService.download(this.lendingContact?.id as string).subscribe(() => {
-      this.lendingContractService.showMessage('Download efetuado com sucesso!');
-      this.router.navigate(['/contracts']);
-    })
+    screenToPrint?.document.write(content as string);
   }
 
   cancel(): void {
     this.router.navigate(['/contracts']);
+  }
+
+  printer() {
+
   }
 
 }
