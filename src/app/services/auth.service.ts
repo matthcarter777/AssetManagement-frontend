@@ -25,15 +25,12 @@ export class AuthService {
     this.http.post<UserLogin>(this.basUrl, user).subscribe( response => {
       this.userToken = response.token;
 
-      if (this.userToken) {        
-        this.showMessage(`Bem Vindo!`);
-              
+      if (this.userToken) {              
         localStorage.setItem('token', this.userToken);
-        
+        this.showMessage('Bem vindo!');
         this.router.navigate(['/']);
       } else {
         this.remove()
-        this.showMessage(`Email/Senha incorreto!`);
       }
     });
   } 
