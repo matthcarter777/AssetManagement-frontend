@@ -3,6 +3,7 @@ import { TypeService } from 'src/app/services/type.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Type } from './../../../models/type.model';
+import { FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { Type } from './../../../models/type.model';
 })
 export class TypeUpdateComponent implements OnInit {
   type!: Type;
+
+  name = new FormControl('', [Validators.required]);
 
   constructor(
     private typeService: TypeService,
@@ -28,10 +31,20 @@ export class TypeUpdateComponent implements OnInit {
   }
 
   update(): void {
-    this.typeService.update(this.type as Type).subscribe(() => {
-      this.typeService.showMessage('Categoria alterada com sucesso!');
-      this.router.navigate(['/categories']);
-    });
+    if(this.type.name !== '') {
+      this.typeService.update(this.type as Type).subscribe(() => {
+        this.typeService.showMessage('Categoria alterada com sucesso!');
+        this.router.navigate(['/categories']);
+      });
+    }
+    this.typeService.showMessage('Nome não pode ser vazio!');
+  }
+
+  getErrorMessage() {
+    if (this.name.hasError('required')) {
+      return 'Nome não pode ser vazio!';
+    }
+    return;
   }
 
   cancel(): void {
