@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { TypeService } from 'src/app/services/type.service';
@@ -12,10 +12,11 @@ import { Type } from './../../../models/type.model';
 })
 export class TypeCreateComponent implements OnInit {
 
-  formType!: FormGroup;
   type: Type = {
     name: ''
   }
+
+  name = new FormControl('', [Validators.required]);
 
   constructor(
     private typeService: TypeService,
@@ -23,23 +24,8 @@ export class TypeCreateComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-  ngOnInit(): void {
-    this.createFormType();
-  }
+  ngOnInit(): void {}
  
-  createFormType() {
-    this.formType = this.fb.group({
-      name: [
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(100)
-        ])
-      ],
-    });
-  }
-
   createType(): void {
     if ( this.type.name !== '' ) {
       this.typeService.create(this.type).subscribe(( type ) => {
@@ -48,6 +34,13 @@ export class TypeCreateComponent implements OnInit {
       });  
     }
     this.typeService.showMessage('Nome não pode ser vazio!');
+  }
+
+  getErrorMessage() {
+    if (this.name.hasError('required')) {
+      return 'Nome não pode ser vazio!';
+    }
+    return;
   }
 
   cancel(): void {

@@ -3,13 +3,14 @@
   <form>
     <mat-form-field>
       <input matInput placeholder="Nome"
-      [(ngModel)]="type.name" name="name">
+      [(ngModel)]="type.name" name="name" required>
+      <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
   </form>
   <button 
     mat-raised-button 
     (click)="createType()" 
-    color="primary" 
+    color="primary"
   >
   Salvar
   </button>
