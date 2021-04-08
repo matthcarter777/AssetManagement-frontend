@@ -55,8 +55,26 @@ export class ShowContractComponent implements OnInit {
     this.router.navigate(['/contracts']);
   }
 
-  printer() {
+  download() {
+    this.lendingContractService.downloadContract(this.lendingContact.id as string).subscribe((res: any) => {
+      const file = new Blob([res], {
+        type: res.type
+      });
 
+      const blob = window.URL.createObjectURL(file);
+
+      const link = document.createElement('a');
+      link.href = blob;
+      link.download = 'contract.pdf'
+
+      link.click();
+
+      window.URL.revokeObjectURL(blob);
+      link.remove();
+
+      this.lendingContractService.showMessage('Download efetuado com sucesso!');
+      this.router.navigate(['/contracts'])
+    });
   }
 
 }

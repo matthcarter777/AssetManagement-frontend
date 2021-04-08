@@ -74,6 +74,16 @@ export class LendingContractService {
     );
   }
 
+  downloadContract(id: string): Observable<LendingContract> {
+    const url = `${this.basUrl}/create/download/${id}`;
+    return this.http.get<LendingContract>(url, {
+      responseType: 'blob' as 'json'
+    }).pipe(
+      map(obj => obj),
+      catchError(e => this.handelError(e))
+    );
+  }
+
   handelError(e: any): Observable<any> {
     this.showMessage('Ocorreu um erro', true);
     return EMPTY;
