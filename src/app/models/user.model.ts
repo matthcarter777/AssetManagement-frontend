@@ -4,5 +4,6 @@ export interface User {
   email: string;
   cpf: string;
   registration: string;
+  position: string;
   password?: string;
 }

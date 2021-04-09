@@ -15,6 +15,7 @@ export class UserCreateComponent implements OnInit {
     email: '',
     name: '',
     registration: '',
+    position: '',
     password: ''
   }
 
@@ -36,6 +37,7 @@ export class UserCreateComponent implements OnInit {
       this.user.name === '' ||
       this.user.cpf === ''  ||
       this.user.registration === '' ||
+      this.user.position === '' ||
       this.user.email === ''
     ) {
       this.getErrorMessage()
